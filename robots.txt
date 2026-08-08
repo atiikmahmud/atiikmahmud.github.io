@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atiikmahmud.github.io/sitemap.xml
