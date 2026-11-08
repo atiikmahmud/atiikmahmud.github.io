@@ -1,25 +1,13 @@
 {
     "name": "Atik Mahmud | Web Applications Developer Portfolio",
     "short_name": "Atik Mahmud",
+    "start_url": "/",
     "icons": [
-        {
-            "src": "https://atiikmahmud.github.io/assets/images/favicon.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any maskable"
-        },
-        {
-            "src": "https://atiikmahmud.github.io/assets/images/favicon.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        },
-        {
-            "src": "https://atiikmahmud.github.io/assets/images/favicon.png",
-            "sizes": "925x925",
-            "type": "image/png"
-        }
+        { "src": "assets/images/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+        { "src": "assets/images/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+        { "src": "assets/images/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
     ],
-    "theme_color": "#0d1a2b",
-    "background_color": "#0d1a2b",
+    "theme_color": "#0b0e0c",
+    "background_color": "#0b0e0c",
     "display": "standalone"
 }
