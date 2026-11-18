@@ -53,45 +53,15 @@
         <link rel="preload" href="assets/fonts/geist-normal.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="stylesheet" href="assets/css/styles.css">
         <script>document.documentElement.classList.add('js');</script>
+        <link rel="preload" href="config.json" as="fetch" crossorigin>
 
-        <!-- Structured Data (JSON-LD) -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "ProfilePage",
-          "name": "Atik Mahmud Portfolio",
-          "url": "https://atiikmahmud.github.io/",
-          "mainEntity": {
-            "@type": "Person",
-            "name": "Atik Mahmud",
-            "url": "https://atiikmahmud.github.io/",
-            "image": "https://atiikmahmud.github.io/assets/images/atikmahmud.png",
-            "jobTitle": "Web Applications Developer",
-            "email": "mailto:atiikmahmud@gmail.com",
-            "telephone": "+8801749941982",
-            "description": "I’m a Web Applications Developer with 4+ years of experience building scalable, user-focused solutions using Laravel, Next.js, React, WordPress, and REST APIs.",
-            "sameAs": [
-              "https://www.facebook.com/atiikmahmud",
-              "https://github.com/atiikmahmud",
-              "https://www.linkedin.com/in/atiikmahmud/",
-              "https://wa.me/8801749941982"
-            ],
-            "knowsAbout": ["HTML5", "CSS3", "Bootstrap CSS", "Tailwind CSS", "JavaScript", "React.js", "Next.js", "Node.js", "Express.js", "PHP", "Laravel", "WordPress", "MySQL", "RESTful API"],
-            "nationality": { "@type": "Country", "name": "Bangladesh" }
-          }
-        }
-        </script>
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Atik Mahmud Portfolio",
-          "url": "https://atiikmahmud.github.io/",
-          "description": "Official portfolio of Atik Mahmud, a Web Applications Developer with 4+ years of expertise in Laravel, Next.js, React, WordPress, and REST APIs."
-        }
-        </script>
+        <!-- Structured data is generated from config.json by assets/js/main.js -->
     </head>
     <body>
+        <!--
+            All content on this page comes from config.json.
+            Edit it with the editor at /config.html (or by hand), then reload.
+        -->
         <a class="skip" href="#work">Skip to selected work</a>
 
         <!-- Shared icon -->
@@ -99,227 +69,15 @@
             <symbol id="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
         </svg>
 
-        <nav class="nav" aria-label="Primary">
-            <span class="nav__thumb" aria-hidden="true"></span>
-            <a class="nav__mark" href="#top" aria-label="Atik Mahmud, back to top">AM</a>
-            <a class="nav__link" href="#work">Work</a>
-            <a class="nav__link" href="#about">About</a>
-            <a class="nav__link" href="#stack">Stack</a>
-            <a class="nav__link" href="#contact">Contact</a>
-        </nav>
+        <nav class="nav" aria-label="Primary" data-slot="nav"></nav>
 
-        <main id="top">
-            <!-- Hero -->
-            <header class="hero">
-                <h1 class="hero__name">
-                    <span class="hero__word">Atik</span>
-                    <span class="hero__word"><em>Mahmud</em></span>
-                    <span class="sr"> – Web Applications Developer</span>
-                </h1>
+        <main id="top" data-slot="main" aria-busy="true"></main>
 
-                <div class="hero__intro">
-                    <p class="status"><span class="status__dot" aria-hidden="true"></span>Open to new projects and opportunities</p>
-                    <p class="hero__lede">Turning ideas into <em>impactful</em> digital products.</p>
-                    <p class="hero__sub">Web Applications Developer with 4+ years of experience, specialized in building scalable digital solutions with Laravel, Next.js, React and WordPress.</p>
-                    <div class="hero__cta">
-                        <a class="btn btn--solid" href="#work">View selected work <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
-                        <a class="btn" href="#contact">Get in touch</a>
-                    </div>
-                </div>
+        <footer class="contact" id="contact" data-slot="contact"></footer>
 
-                <figure class="plate">
-                    <div class="plate__inner">
-                        <figcaption class="plate__cap">
-                            <span>Atik Mahmud</span>
-                            <span>Bangladesh <span data-clock></span></span>
-                        </figcaption>
-                        <img src="assets/images/portrait.webp" width="900" height="900" alt="Graphite-style portrait of Atik Mahmud" fetchpriority="high">
-                    </div>
-                </figure>
-            </header>
-
-            <!-- Selected work -->
-            <section class="section" id="work" aria-labelledby="work-title">
-                <div class="head">
-                    <p class="label">Selected work</p>
-                    <h2 class="title" id="work-title" data-reveal>Products I’ve helped <em>build.</em></h2>
-                    <p class="head__note" data-reveal>I contributed to each of these as a team member, developing features to improve functionality and user experience.</p>
-                </div>
-
-                <div class="work">
-                    <article class="card card--wide" data-reveal>
-                        <a class="card__link" href="https://shajgoj.com" target="_blank" rel="noopener">
-                            <div class="card__bar"><span>shajgoj.com</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></div>
-                            <div class="card__frame">
-                                <img src="assets/images/work/shajgoj.webp" width="1100" height="2062" loading="lazy" decoding="async" alt="Homepage of shajgoj.com, a Bengali beauty blog portal">
-                            </div>
-                            <div class="card__body">
-                                <span class="card__no">01</span>
-                                <h3 class="card__name">Shajgoj</h3>
-                                <p class="card__desc">World’s largest Bengali beauty blog portal, by Shajgoj Limited.</p>
-                                <ul class="card__meta">
-                                    <li>Blog</li><li>Laravel</li><li>React.js</li>
-                                </ul>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="card card--tall" data-reveal>
-                        <a class="card__link" href="https://shop.shajgoj.com" target="_blank" rel="noopener">
-                            <div class="card__bar"><span>shop.shajgoj.com</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></div>
-                            <div class="card__frame">
-                                <img src="assets/images/work/shajgoj-shop.webp" width="1100" height="2062" loading="lazy" decoding="async" alt="Homepage of shop.shajgoj.com, a cosmetics store">
-                            </div>
-                            <div class="card__body">
-                                <span class="card__no">02</span>
-                                <h3 class="card__name">Shajgoj Shop</h3>
-                                <p class="card__desc">Cosmetics eCommerce website for Shajgoj Limited.</p>
-                                <ul class="card__meta">
-                                    <li>eCommerce</li><li>Laravel</li><li>Next.js</li>
-                                </ul>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="card card--tall" data-reveal>
-                        <a class="card__link" href="https://skincafe.co" target="_blank" rel="noopener">
-                            <div class="card__bar"><span>skincafe.co</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></div>
-                            <div class="card__frame">
-                                <img src="assets/images/work/skincafe.webp" width="1100" height="2062" loading="lazy" decoding="async" alt="Homepage of skincafe.co, a skincare store">
-                            </div>
-                            <div class="card__body">
-                                <span class="card__no">03</span>
-                                <h3 class="card__name">Skin Cafe</h3>
-                                <p class="card__desc">Cosmetics eCommerce website for Skin Cafe Limited.</p>
-                                <ul class="card__meta">
-                                    <li>eCommerce</li><li>Laravel</li><li>React.js</li>
-                                </ul>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="card card--wide" data-reveal>
-                        <a class="card__link" href="https://luxotix.com" target="_blank" rel="noopener">
-                            <div class="card__bar"><span>luxotix.com</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></div>
-                            <div class="card__frame">
-                                <img src="assets/images/work/luxotix.webp" width="1100" height="2062" loading="lazy" decoding="async" alt="Homepage of luxotix.com, an eyewear store">
-                            </div>
-                            <div class="card__body">
-                                <span class="card__no">04</span>
-                                <h3 class="card__name">Luxotix Eyewear</h3>
-                                <p class="card__desc">Eyewear eCommerce website for Luxotix Eyewear Limited.</p>
-                                <ul class="card__meta">
-                                    <li>eCommerce</li><li>WordPress</li>
-                                </ul>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-            </section>
-
-            <!-- About -->
-            <section class="section" id="about" aria-labelledby="about-title">
-                <div class="about">
-                    <div class="about__text">
-                        <p class="label">About</p>
-                        <h2 class="about__big" id="about-title" data-reveal>I’m a Web Applications Developer with 4+ years of experience building <em class="nb">scalable, user-focused</em> solutions.</h2>
-                        <p class="about__small" data-reveal>Passionate about clean code, intuitive design, and effective collaboration, I enjoy every step of turning ideas into impactful digital products.</p>
-                    </div>
-
-                    <div class="json" data-reveal>
-                        <div class="json__bar"><span>profile.json</span></div>
-<pre class="json__code" tabindex="0" aria-label="Profile summary written as JSON"><code><span class="l">{</span>
-<span class="l g1"><span class="k">"profile"</span>: {</span>
-<span class="l g2"><span class="k">"name"</span>: <span class="s">"Atik Mahmud"</span>,</span>
-<span class="l g2"><span class="k">"role"</span>: <span class="s">"Web Applications Developer"</span>,</span>
-<span class="l g2"><span class="k">"profile_picture"</span>: <a class="s" href="assets/images/atikmahmud.png">"atikmahmud.png"</a>,</span>
-<span class="l g2"><span class="k">"experience"</span>: <span class="s">"4+ years"</span>,</span>
-<span class="l g2"><span class="k">"based_in"</span>: <span class="s">"Bangladesh"</span>,</span>
-<span class="l g2"><span class="k">"cares_about"</span>: [</span>
-<span class="l g3"><span class="s">"clean code"</span>,</span>
-<span class="l g3"><span class="s">"intuitive design"</span>,</span>
-<span class="l g3"><span class="s">"effective collaboration"</span></span>
-<span class="l g2">],</span>
-<span class="l g2"><span class="k">"open_to"</span>: [</span>
-<span class="l g3"><span class="s">"new projects"</span>,</span>
-<span class="l g3"><span class="s">"opportunities"</span></span>
-<span class="l g2">]</span>
-<span class="l g1">}</span>
-<span class="l">}</span></code></pre>
-                    </div>
-                </div>
-
-                <dl class="stats" data-reveal>
-                    <div class="stat"><dt>Years of experience</dt><dd>4+</dd></div>
-                    <div class="stat"><dt>Live products featured</dt><dd>4</dd></div>
-                    <div class="stat"><dt>Technologies in my toolkit</dt><dd>14</dd></div>
-                </dl>
-            </section>
-
-            <!-- Stack -->
-            <section class="section" id="stack" aria-labelledby="stack-title">
-                <div class="head">
-                    <p class="label">Stack</p>
-                    <h2 class="title" id="stack-title" data-reveal>Across the front end and <em>the back end.</em></h2>
-                    <p class="head__note" data-reveal>My expertise spans modern frontend and backend technologies, from the interface people touch to the APIs behind it.</p>
-                </div>
-
-                <div class="stack">
-                    <div class="stack__col" data-reveal>
-                        <h3 class="stack__title">Frontend</h3>
-                        <ul class="stack__list">
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>Bootstrap CSS</li>
-                            <li>Tailwind CSS</li>
-                            <li>JavaScript <small>ES6+</small></li>
-                            <li>React.js</li>
-                            <li>Next.js</li>
-                        </ul>
-                    </div>
-                    <div class="stack__col" data-reveal>
-                        <h3 class="stack__title">Backend</h3>
-                        <ul class="stack__list">
-                            <li>PHP <small>8.x</small></li>
-                            <li>Laravel</li>
-                            <li>WordPress</li>
-                            <li>Node.js</li>
-                            <li>Express.js</li>
-                            <li>MySQL</li>
-                            <li>REST APIs</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Contact -->
-        <footer class="contact" id="contact">
-            <div class="contact__wrap">
-                <p class="label label--ink">Contact</p>
-                <h2 class="contact__title" data-reveal>Have a project <em>in&nbsp;mind?</em></h2>
-                <p class="contact__note" data-reveal>I’m always open to discussing new projects and opportunities.</p>
-
-                <div class="mail" data-reveal>
-                    <a class="mail__link" href="mailto:atiikmahmud@gmail.com">atiikmahmud@gmail.com</a>
-                    <button class="mail__copy" type="button" data-copy="atiikmahmud@gmail.com">Copy email</button>
-                </div>
-
-                <ul class="links" data-reveal>
-                    <li><a href="tel:+8801749941982"><span>Phone</span><b>+880 1749 941982</b><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></li>
-                    <li><a href="https://wa.me/8801749941982" target="_blank" rel="noopener me"><span>WhatsApp</span><b>Send a message</b><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></li>
-                    <li><a href="https://www.linkedin.com/in/atiikmahmud/" target="_blank" rel="noopener me"><span>LinkedIn</span><b>in/atiikmahmud</b><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></li>
-                    <li><a href="https://github.com/atiikmahmud" target="_blank" rel="noopener me"><span>GitHub</span><b>atiikmahmud</b><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></li>
-                    <li><a href="https://www.facebook.com/atiikmahmud" target="_blank" rel="noopener me"><span>Facebook</span><b>atiikmahmud</b><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></li>
-                </ul>
-
-                <div class="legal">
-                    <span>© <span data-year>2026</span> Atik Mahmud. All rights reserved.</span>
-                    <span>Bangladesh <span data-clock></span></span>
-                    <a href="#top">Back to top</a>
-                </div>
-            </div>
-        </footer>
+        <noscript>
+            <p class="noscript">This portfolio needs JavaScript to load its content. Reach me at <a href="mailto:atiikmahmud@gmail.com">atiikmahmud@gmail.com</a>.</p>
+        </noscript>
 
         <p class="sr" role="status" aria-live="polite" data-live></p>
 

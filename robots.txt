@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /config.html
 
 Sitemap: https://atiikmahmud.github.io/sitemap.xml

@@ -53,6 +53,10 @@
   --mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --gutter: clamp(16px, 2.8vw, 44px);
+  /* Content container: everything lines up inside this width on big screens. */
+  --wrap: 1320px;
+  /* Size of the big name in the hero, capped by the container. */
+  --name: min(17.1vw, 38vh, calc(var(--wrap) * 0.18));
   --section: clamp(96px, 13vw, 200px);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -131,6 +135,31 @@ em { font-style: italic; }
 .skip:focus { transform: none; }
 
 .i { width: 1em; height: 1em; flex: none; }
+
+/* Container -------------------------------------------------------------- */
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+}
+
+/* Before config.json has rendered: hold the space, hide empty chrome. */
+main[aria-busy] { min-height: 100vh; min-height: 100svh; }
+.nav:empty, .contact:empty { display: none; }
+
+.load-error {
+  padding: 160px 0;
+  color: var(--muted);
+}
+.load-error p + p { margin-top: 12px; }
+.load-error code { font-family: var(--mono); font-size: 14px; color: var(--text); }
+.noscript {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 120px var(--gutter);
+  color: var(--muted);
+}
+.noscript a { color: var(--citron); text-decoration: underline; }
 
 .label {
   font-family: var(--mono);
@@ -221,14 +250,22 @@ em { font-style: italic; }
 .hero {
   position: relative;
   isolation: isolate;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: 1fr auto;
-  column-gap: 24px;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   min-height: 100svh;
   padding: 104px var(--gutter) clamp(18px, 2vw, 30px);
   overflow: clip;
+}
+.hero__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: 1fr auto;
+  column-gap: 24px;
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
 }
 /* The gallery light falling on the print. */
 .hero::before {
@@ -237,8 +274,8 @@ em { font-style: italic; }
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(46vw 60vh at 74% 24%, rgba(236, 231, 220, 0.09), transparent 70%),
-    radial-gradient(30vw 40vh at 18% 8%, rgba(203, 227, 106, 0.05), transparent 70%);
+    radial-gradient(min(46vw, 640px) 60vh at calc(50% + min(24vw, 330px)) 24%, rgba(236, 231, 220, 0.09), transparent 70%),
+    radial-gradient(min(30vw, 420px) 40vh at calc(50% - min(32vw, 440px)) 8%, rgba(203, 227, 106, 0.05), transparent 70%);
 }
 
 .hero__name {
@@ -250,7 +287,7 @@ em { font-style: italic; }
   color: var(--paper);
   font-family: var(--serif);
   font-weight: 300;
-  font-size: min(17.1vw, 38vh);
+  font-size: var(--name);
   line-height: 0.84;
   letter-spacing: -0.035em;
   white-space: nowrap;
@@ -328,7 +365,7 @@ em { font-style: italic; }
   justify-self: end;
   align-self: start;
   /* Fills the wall down to the middle of the name. */
-  height: calc(100% - min(17.1vw, 38vh) * 0.42);
+  height: calc(100% - var(--name) * 0.42);
   aspect-ratio: 5 / 6;
   max-width: 100%;
 }
@@ -682,6 +719,7 @@ em { font-style: italic; }
   background: var(--paper);
   color: var(--on-paper);
 }
+.contact__wrap { position: relative; }
 .contact ::selection { background: var(--on-paper); color: var(--paper); }
 
 .contact__title em { display: block; }
@@ -795,6 +833,13 @@ em { font-style: italic; }
 .js .work [data-reveal]:nth-child(even).is-in { transition-delay: 0.1s; }
 .js .stack [data-reveal]:nth-child(even).is-in { transition-delay: 0.1s; }
 
+/* Live preview inside the config editor: show everything, animate nothing. */
+.no-motion *, .no-motion *::before, .no-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+.js.no-motion [data-reveal] { opacity: 1; transform: none; }
+
 /* Motion ------------------------------------------------------------------ */
 @keyframes rise {
   from { opacity: 0; transform: translateY(0.14em); }
@@ -866,10 +911,12 @@ em { font-style: italic; }
   .nav__thumb { height: 44px; }
 
   .hero {
-    display: flex;
-    flex-direction: column;
     min-height: 0;
     padding: 16px var(--gutter) 0;
+  }
+  .hero__grid {
+    display: flex;
+    flex-direction: column;
   }
   .plate {
     order: 1;

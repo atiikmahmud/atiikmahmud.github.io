@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portfolio Config</title>
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="theme-color" content="#0b0e0c">
+        <meta name="color-scheme" content="dark">
+        <link rel="icon" href="assets/images/favicon.ico" sizes="32x32">
+        <link rel="preload" href="assets/fonts/geist-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="assets/css/config.css">
+    </head>
+    <body>
+        <header class="bar">
+            <div class="bar__brand">
+                <a class="bar__mark" href="index.html" title="Open the site">AM</a>
+                <div>
+                    <h1 class="bar__title">Portfolio config</h1>
+                    <p class="bar__status" data-status>Loading config.json…</p>
+                </div>
+            </div>
+            <div class="bar__actions">
+                <button class="btn btn--ghost" type="button" data-action="toggle-preview" aria-pressed="false">Live preview</button>
+                <a class="btn btn--ghost" href="index.html?preview" target="_blank" rel="noopener">Open preview</a>
+                <button class="btn btn--ghost" type="button" data-action="import">Import</button>
+                <button class="btn btn--ghost" type="button" data-action="download">Download</button>
+                <button class="btn" type="button" data-action="save-file" hidden>Save to file</button>
+                <button class="btn btn--solid" type="button" data-action="publish">Publish</button>
+            </div>
+        </header>
+
+        <div class="banner" data-banner hidden>
+            <p data-banner-text></p>
+            <div class="banner__actions">
+                <button class="btn btn--solid btn--sm" type="button" data-action="restore-draft">Restore my changes</button>
+                <button class="btn btn--sm" type="button" data-action="discard-draft">Discard</button>
+            </div>
+        </div>
+
+        <div class="layout" data-layout>
+            <nav class="side" aria-label="Sections" data-side></nav>
+            <main class="editor" data-editor></main>
+            <aside class="preview" data-preview hidden>
+                <div class="preview__bar">
+                    <span>Live preview · unsaved draft</span>
+                    <div class="seg" role="group" aria-label="Preview size">
+                        <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+                        <button type="button" data-device="mobile" aria-pressed="false">Mobile</button>
+                    </div>
+                </div>
+                <div class="preview__stage" data-stage>
+                    <iframe title="Live preview of the portfolio" data-frame></iframe>
+                </div>
+            </aside>
+        </div>
+
+        <dialog class="dialog" data-dialog="publish" aria-labelledby="publish-title">
+            <form method="dialog" class="dialog__form" data-publish-form>
+                <h2 class="dialog__title" id="publish-title">Publish to GitHub</h2>
+                <p class="dialog__lede">Commits <code>config.json</code> straight to your repository. GitHub Pages redeploys the site within a minute or two.</p>
+
+                <div class="grid">
+                    <div class="field">
+                        <label class="field__label" for="gh-owner">Owner</label>
+                        <input id="gh-owner" name="owner" required autocomplete="off" spellcheck="false">
+                    </div>
+                    <div class="field">
+                        <label class="field__label" for="gh-repo">Repository</label>
+                        <input id="gh-repo" name="repo" required autocomplete="off" spellcheck="false">
+                    </div>
+                    <div class="field">
+                        <label class="field__label" for="gh-branch">Branch</label>
+                        <input id="gh-branch" name="branch" required autocomplete="off" spellcheck="false">
+                        <p class="field__hint">The branch GitHub Pages deploys from.</p>
+                    </div>
+                    <div class="field">
+                        <label class="field__label" for="gh-path">File path</label>
+                        <input id="gh-path" name="path" required autocomplete="off" spellcheck="false">
+                    </div>
+                    <div class="field field--wide">
+                        <label class="field__label" for="gh-token">Personal access token</label>
+                        <input id="gh-token" name="token" type="password" required autocomplete="off" spellcheck="false">
+                        <p class="field__hint">Create a <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">fine-grained token</a> for this repository only, with <b>Contents: Read and write</b>. It is sent only to api.github.com.</p>
+                    </div>
+                    <label class="check field--wide">
+                        <input type="checkbox" name="remember">
+                        <span>Remember the token in this browser</span>
+                    </label>
+                    <div class="field field--wide">
+                        <label class="field__label" for="gh-message">Commit message</label>
+                        <input id="gh-message" name="message" autocomplete="off">
+                    </div>
+                </div>
+
+                <p class="dialog__msg" data-publish-msg role="status" aria-live="polite"></p>
+
+                <div class="dialog__actions">
+                    <button class="btn btn--ghost" type="submit" value="cancel" formnovalidate>Cancel</button>
+                    <button class="btn btn--solid" type="submit" value="publish" data-publish-submit>Publish</button>
+                </div>
+            </form>
+        </dialog>
+
+        <input type="file" accept="application/json,.json" hidden data-import>
+        <div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+
+        <script src="assets/js/config.js" defer></script>
+    </body>
+</html>

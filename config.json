@@ -1,0 +1,130 @@
+{
+    "site": {
+        "title": "Atik Mahmud | Web Applications Developer Portfolio",
+        "description": "Atik Mahmud’s portfolio – Web Developer with 4+ years of experience specializing in Laravel, Next.js, React, WordPress, and REST APIs. Explore projects and experience.",
+        "url": "https://atiikmahmud.github.io/",
+        "timezone": "Asia/Dhaka",
+        "timezoneLabel": "GMT+6"
+    },
+    "profile": {
+        "firstName": "Atik",
+        "lastName": "Mahmud",
+        "initials": "AM",
+        "role": "Web Applications Developer",
+        "experience": "4+ years",
+        "location": "Bangladesh",
+        "email": "atiikmahmud@gmail.com",
+        "photo": "assets/images/atikmahmud.png",
+        "portrait": "assets/images/portrait.webp",
+        "portraitAlt": "Graphite-style portrait of Atik Mahmud",
+        "status": "Open to new projects and opportunities",
+        "showStatus": true
+    },
+    "nav": [
+        { "label": "Work", "target": "work" },
+        { "label": "About", "target": "about" },
+        { "label": "Stack", "target": "stack" },
+        { "label": "Contact", "target": "contact" }
+    ],
+    "hero": {
+        "lede": "Turning ideas into *impactful* digital products.",
+        "sub": "Web Applications Developer with 4+ years of experience, specialized in building scalable digital solutions with Laravel, Next.js, React and WordPress.",
+        "primaryCta": { "label": "View selected work", "href": "#work" },
+        "secondaryCta": { "label": "Get in touch", "href": "#contact" }
+    },
+    "work": {
+        "label": "Selected work",
+        "title": "Products I’ve helped *build.*",
+        "note": "I contributed to each of these as a team member, developing features to improve functionality and user experience.",
+        "projects": [
+            {
+                "name": "Shajgoj",
+                "url": "https://shajgoj.com",
+                "image": "assets/images/work/shajgoj.webp",
+                "imageAlt": "Homepage of shajgoj.com, a Bengali beauty blog portal",
+                "description": "World’s largest Bengali beauty blog portal, by Shajgoj Limited.",
+                "tags": ["Blog", "Laravel", "React.js"]
+            },
+            {
+                "name": "Shajgoj Shop",
+                "url": "https://shop.shajgoj.com",
+                "image": "assets/images/work/shajgoj-shop.webp",
+                "imageAlt": "Homepage of shop.shajgoj.com, a cosmetics store",
+                "description": "Cosmetics eCommerce website for Shajgoj Limited.",
+                "tags": ["eCommerce", "Laravel", "Next.js"]
+            },
+            {
+                "name": "Skin Cafe",
+                "url": "https://skincafe.co",
+                "image": "assets/images/work/skincafe.webp",
+                "imageAlt": "Homepage of skincafe.co, a skincare store",
+                "description": "Cosmetics eCommerce website for Skin Cafe Limited.",
+                "tags": ["eCommerce", "Laravel", "React.js"]
+            },
+            {
+                "name": "Luxotix Eyewear",
+                "url": "https://luxotix.com",
+                "image": "assets/images/work/luxotix.webp",
+                "imageAlt": "Homepage of luxotix.com, an eyewear store",
+                "description": "Eyewear eCommerce website for Luxotix Eyewear Limited.",
+                "tags": ["eCommerce", "WordPress"]
+            }
+        ]
+    },
+    "about": {
+        "label": "About",
+        "title": "I’m a Web Applications Developer with 4+ years of experience building *scalable, user-focused* solutions.",
+        "text": "Passionate about clean code, intuitive design, and effective collaboration, I enjoy every step of turning ideas into impactful digital products.",
+        "caresAbout": ["clean code", "intuitive design", "effective collaboration"],
+        "openTo": ["new projects", "opportunities"],
+        "stats": [
+            { "label": "Years of experience", "value": "4+" },
+            { "label": "Live products featured", "value": "{{projects}}" },
+            { "label": "Technologies in my toolkit", "value": "{{technologies}}" }
+        ]
+    },
+    "stack": {
+        "label": "Stack",
+        "title": "Across the front end and *the back end.*",
+        "note": "My expertise spans modern frontend and backend technologies, from the interface people touch to the APIs behind it.",
+        "groups": [
+            {
+                "title": "Frontend",
+                "items": [
+                    { "name": "HTML5", "note": "" },
+                    { "name": "CSS3", "note": "" },
+                    { "name": "Bootstrap CSS", "note": "" },
+                    { "name": "Tailwind CSS", "note": "" },
+                    { "name": "JavaScript", "note": "ES6+" },
+                    { "name": "React.js", "note": "" },
+                    { "name": "Next.js", "note": "" }
+                ]
+            },
+            {
+                "title": "Backend",
+                "items": [
+                    { "name": "PHP", "note": "8.x" },
+                    { "name": "Laravel", "note": "" },
+                    { "name": "WordPress", "note": "" },
+                    { "name": "Node.js", "note": "" },
+                    { "name": "Express.js", "note": "" },
+                    { "name": "MySQL", "note": "" },
+                    { "name": "REST APIs", "note": "" }
+                ]
+            }
+        ]
+    },
+    "contact": {
+        "label": "Contact",
+        "title": "Have a project *in mind?*",
+        "note": "I’m always open to discussing new projects and opportunities.",
+        "links": [
+            { "label": "Phone", "value": "+880 1749 941982", "href": "tel:+8801749941982" },
+            { "label": "WhatsApp", "value": "Send a message", "href": "https://wa.me/8801749941982" },
+            { "label": "LinkedIn", "value": "in/atiikmahmud", "href": "https://www.linkedin.com/in/atiikmahmud/" },
+            { "label": "GitHub", "value": "atiikmahmud", "href": "https://github.com/atiikmahmud" },
+            { "label": "Facebook", "value": "atiikmahmud", "href": "https://www.facebook.com/atiikmahmud" }
+        ],
+        "copyright": "All rights reserved."
+    }
+}
